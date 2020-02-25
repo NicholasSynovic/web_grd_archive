@@ -24,8 +24,10 @@ window.onload = function()  {
                 const container = document.createElement("div")
                 const name = document.createElement("ol")
                 const description = document.createElement("ul")
+                const urlLink = document.createElement("a")
                 const url = document.createElement("ul")
                 
+                urlLink.setAttribute("href", index.html_url)
                 container.setAttribute("class", "container")
 
                 name.textContent = index.name
@@ -33,10 +35,10 @@ window.onload = function()  {
                 url.textContent = index.html_url
 
                 name.appendChild(description)
-                name.appendChild(url)
+                urlLink.appendChild(url)
+                name.appendChild(urlLink)
                 container.appendChild(name)
                 app.appendChild(container)
-
             }
         })
     }
