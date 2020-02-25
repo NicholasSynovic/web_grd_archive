@@ -2,23 +2,18 @@
 
 window.onload = function()  {
     const app = document.getElementById('root')
-
     const container = document.createElement('div')
     container.setAttribute('class', 'container')
-
     app.appendChild(container)
 
     var repoName = []
     var repoDescription = []
     var repoURL = []
-
     var request = new XMLHttpRequest()
 
     request.open("GET", "https://api.github.com/users/benawad/repos", true)
-
     request.onload = function()   {
         response = JSON.parse(this.response)
-
         response.forEach(index => {
             if(request.status >= 305 && request.status < 400)   {
                 repoName.push("Error")
@@ -26,18 +21,25 @@ window.onload = function()  {
                 repoURL.push("Error")
             }
             else    {
+                const container = document.createElement("div")
                 const name = document.createElement("ol")
+                const description = document.createElement("ul")
+                const url = document.createElement("ul")
+                
+                container.setAttribute("class", "container")
+
                 name.textContent = index.name
+                description.textContent = index.description
+                url.textContent = index.html_url
 
-                app.appendChild(name)
+                name.appendChild(description)
+                name.appendChild(url)
+                container.appendChild(name)
+                app.appendChild(container)
 
-                repoName.push(index.name)
-                repoDescription.push(index.description)
-                repoURL.push(index.html_url)
             }
         })
     }
-
     request.send()
 
     console.log(repoName)
