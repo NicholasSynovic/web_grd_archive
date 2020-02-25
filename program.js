@@ -13,7 +13,7 @@ window.onload = function()  {
 
     var request = new XMLHttpRequest()
 
-    program("https://api.github.com/users/benawad/repos?per_page=100")
+    program("https://api.github.com/users/NicholasSynovic/repos?per_page=100")
 
     function program(url)   {
         request.open("GET", url, true)
@@ -21,8 +21,17 @@ window.onload = function()  {
             // TODO: Add error checking incase code 403 appears. Wanted code is 304
             response = JSON.parse(this.response)
             buildPage(response)
+            var next = nextPage(request.getResponseHeader("Link"))
+            if(next == null) {
+                return null
+            }
+            else    {
+                program(next)
+                return null
+            }
         }
         request.send()
+        return null
     }
 
     function buildPage(json)    {
@@ -47,4 +56,22 @@ window.onload = function()  {
             app.appendChild(container)
         })
     }
+
+    function nextPage(headerLink)  {
+        if(headerLink == null) {
+            return null
+        }
+        else    {
+            foo = headerLink.split(" ")
+            bar = foo.indexOf('rel=\"next\",')
+            if(bar == -1)   {
+                return null
+            }
+            else    {
+                console.log(foo[bar - 1])
+                return foo[bar - 1].substr(1, foo[bar - 1].length - 3)
+            }
+        }
+    }
+    return null
 }
