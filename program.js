@@ -1,32 +1,46 @@
 // https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/
 
-var repoName = []
-var repoDescription = []
-var repoURL = []
+window.onload = function()  {
+    const app = document.getElementById('root')
 
-var request = new XMLHttpRequest()
+    const container = document.createElement('div')
+    container.setAttribute('class', 'container')
 
-request.open("GET", "https://api.github.com/users/benawad/repos", true)
+    app.appendChild(container)
 
-request.onload = function()   {
-    response = JSON.parse(this.response)
+    var repoName = []
+    var repoDescription = []
+    var repoURL = []
 
-    response.forEach(index => {
-        if(request.status >= 200 && request.status < 400)   {
-            repoName.push("Error")
-            repoDescription.push("Error")
-            repoURL.push("Error")
-        }
-        else    {
-            repoName.push(index.name)
-            repoDescription.push(index.description)
-            repoURL.push(index.html_url)
-        }
-    })
+    var request = new XMLHttpRequest()
+
+    request.open("GET", "https://api.github.com/users/benawad/repos", true)
+
+    request.onload = function()   {
+        response = JSON.parse(this.response)
+
+        response.forEach(index => {
+            if(request.status >= 305 && request.status < 400)   {
+                repoName.push("Error")
+                repoDescription.push("Error")
+                repoURL.push("Error")
+            }
+            else    {
+                const name = document.createElement("ol")
+                name.textContent = index.name
+
+                app.appendChild(name)
+
+                repoName.push(index.name)
+                repoDescription.push(index.description)
+                repoURL.push(index.html_url)
+            }
+        })
+    }
+
+    request.send()
+
+    console.log(repoName)
+    console.log(repoDescription)
+    console.log(repoURL)
 }
-
-request.send()
-
-console.log(repoName)
-console.log(repoDescription)
-console.log(repoURL)
