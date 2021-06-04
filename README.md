@@ -21,11 +21,6 @@ This is simple JS code to make sure that anyone can incorporate a list of their 
 - `<script type="text/javascript" src="https://raw.githubusercontent.com/NicholasSynovic/GitHub-Repository-Displayer/main/grd.js"></script>`
 
 2. Call `grd(USERNAME)` where `USERNAME` is the username of a GitHub user.
-
-### Note
-
-You can set a custom amount of repositories to get by setting the `amount` arguement to a value **between** `0 and 100`
-
 3. Parse the returned `array` to get data.
 
 ### Note
@@ -33,6 +28,11 @@ You can set a custom amount of repositories to get by setting the `amount` argue
 Every index within the returned `array` is an `array` and is formatted as:
 
 - `[REPOSITORY_NAME, URL, DESCRIPTION]`
+
+You can set a custom amount of repositories to get by setting the `amount` arguement to an _int_ **between** `0 and 100`
+
+- `grd(USERNAME, AMOUNT)`
+
 
 ## How to Contribute
 
