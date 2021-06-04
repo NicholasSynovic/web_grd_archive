@@ -18,7 +18,6 @@ window.onload = function () {
   function program(url) {
     request.open("GET", url, true)
     request.onload = function () {
-      // TODO: Add error checking incase code 403 appears. Wanted code is 304
       response = JSON.parse(this.response)
       buildPage(response)
       var next = nextPage(request.getResponseHeader("Link"))
