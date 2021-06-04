@@ -1,7 +1,6 @@
-const re = new RegExp("^([^;]*>)")
 var request = new XMLHttpRequest()
 
-function grd(githubUsername: String) {
+function grd(githubUsername) {
   const githubRepositoryAPIURL = "https://api.github.com/users/" + githubUsername + "/repos?per_page=100"
 
   let repositoryData = []
@@ -12,7 +11,7 @@ function grd(githubUsername: String) {
   return repositoryData
 }
 
-function getRepositories(githubRepositoryAPIURL: string, data: Array<Array<string>>) {
+function getRepositories(githubRepositoryAPIURL, data) {
   request.open("GET", githubRepositoryAPIURL, true)
   request.onload = function () {
 
@@ -31,7 +30,7 @@ function getRepositories(githubRepositoryAPIURL: string, data: Array<Array<strin
   }
 }
 
-function getNextPageURL(responseField: string) {
+function getNextPageURL(responseField) {
   const splitURLArray = responseField.split(" ")
   const nextURLIndex = splitURLArray.indexOf('rel=\"next\",')
 
