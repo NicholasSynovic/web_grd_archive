@@ -1,5 +1,5 @@
-function grd(githubUsername) {
-  var githubRepositoryAPIURL = "https://api.github.com/users/" + githubUsername + "/repos?per_page=100"
+function grd(githubUsername, amount = 100) {
+  var githubRepositoryAPIURL = "https://api.github.com/users/" + githubUsername + "/repos?per_page=" + amount.toString
 
   console.log(githubUsername)
   console.log(githubRepositoryAPIURL)
