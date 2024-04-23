@@ -1,23 +1,40 @@
-# Project Name
+# GitHub Repository Display (`grd`)
 
-> Project description one-liner
+> A small library to get a GitHub user's top 100 repositories
 
 ## About
 
-High-level overview of the project
+`grd` is a small repository to return the top 100 repositories of a GitHub repo.
+
+This `js` library is my first small attempt at trying to work with and use `js`
+for web development.
+
+This is honestly more of a test than anything formal.
 
 ## How to Install
 
-Describe what platform this code is meant to run on
+`grd` is written with zero dependencies, and has been tested to work on Firefox
+web browsers.
 
 ### Dependencies
 
-List of dependencies
+- None
 
 ### Installation steps
 
-Steps describing how to install the software
+1. Add this to the `<head>` of your `.html` file:
+   `<script type="text/javascript" src="https://raw.githubusercontent.com/NicholasSynovic/web_grd_archive/main/grd.js">`
 
 ## How to Run
 
-Instructions on how to run the software
+The usable component of the library is the `grd(githubUsername, amount = 100)`
+function.
+
+Here is the documentation for this function:
+
+```js
+/*  Return the top 100 repositories of a GitHub user
+        githubUsername: string = A valid GitHub username
+        amount: integer (min 0, max 100) = The number of repositories to return
+*/
+```
