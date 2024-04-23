@@ -38,4 +38,5 @@ Here is the documentation for this function:
         githubUsername: string = A valid GitHub username
         amount: integer (min 0, max 100) = The number of repositories to return
 */
+function grd(githubUsername, amount = 100) {..}
 ```
