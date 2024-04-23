@@ -1,4 +1,5 @@
-/*  Return the top 100 repositories of a GitHub user
+/*
+    Return the top 100 repositories of a GitHub user
         githubUsername: string = A valid GitHub username
         amount: integer (min 0, max 100) = The number of repositories to return
 */
