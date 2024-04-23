@@ -34,7 +34,7 @@ web browsers.
 ### Installation steps
 
 1. Add this to the `<head>` of your `.html` file:
-   `<script type="text/javascript" src="https://raw.githubusercontent.com/NicholasSynovic/web_grd_archive/main/grd.js" />`
+   `<script src="https://raw.githubusercontent.com/NicholasSynovic/web_grd_archive/main/grd.js" />`
 
 ## How to Run
 
