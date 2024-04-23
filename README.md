@@ -9,9 +9,7 @@
   - [About](#about)
   - [How to Install](#how-to-install)
     - [Dependencies](#dependencies)
-    - [Installation steps](#installation-steps)
   - [How to Run](#how-to-run)
-  - [Example Usage](#example-usage)
 
 ## About
 
@@ -31,11 +29,6 @@ web browsers.
 
 - None
 
-### Installation steps
-
-1. Add this to the `<head>` of your `.html` file:
-   `<script src="https://raw.githubusercontent.com/NicholasSynovic/web_grd_archive/main/grd.js" />`
-
 ## How to Run
 
 The usable component of the library is the `grd(githubUsername, amount = 100)`
@@ -51,13 +44,3 @@ Here is the documentation for this function:
 */
 function grd(githubUsername, amount = 100) {...}
 ```
-
-## Example Usage
-
-**NOTE**: This won't render properly in the GitHub Markdown viewer. To see the
-example visit this
-[repo's GitHub page](https://nicholassynovic.github.io/web_grd_archive/).
-
-The following args were passed into `grd`:
-
-- `grd("NicholasSynovic", 5)`
