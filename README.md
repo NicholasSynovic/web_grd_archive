@@ -2,6 +2,17 @@
 
 > A small library to get a GitHub user's top 100 repositories
 
+## Table of Contents
+
+- [GitHub Repository Display (`grd`)](#github-repository-display-grd)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [How to Install](#how-to-install)
+    - [Dependencies](#dependencies)
+    - [Installation steps](#installation-steps)
+  - [How to Run](#how-to-run)
+  - [Example Usage](#example-usage)
+
 ## About
 
 `grd` is a small repository to return the top 100 repositories of a GitHub repo.
@@ -23,7 +34,7 @@ web browsers.
 ### Installation steps
 
 1. Add this to the `<head>` of your `.html` file:
-   `<script type="text/javascript" src="https://raw.githubusercontent.com/NicholasSynovic/web_grd_archive/main/grd.js">`
+   `<script type="text/javascript" src="https://raw.githubusercontent.com/NicholasSynovic/web_grd_archive/main/grd.js" />`
 
 ## How to Run
 
@@ -40,3 +51,13 @@ Here is the documentation for this function:
 */
 function grd(githubUsername, amount = 100) {...}
 ```
+
+## Example Usage
+
+**NOTE**: This won't render properly in the GitHub Markdown viewer. To see the
+example visit this
+[repo's GitHub page](https://nicholassynovic.github.io/web_grd_archive/).
+
+The following args were passed into `grd`:
+
+- `grd("NicholasSynovic", 5)`
